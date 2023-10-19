@@ -1,7 +1,8 @@
 // Import Model and DataTypes from sequelize
 const { Model, DataTypes } = require("sequelize");
+const { hash, compare } = require('bcrypt');
 const db = require("../config/connection");
-const { post } = require("../controllers/user_routes");
+const Post = require('./Post');
 
 // Create a User class and extend the Model class
 class User extends Model {}
