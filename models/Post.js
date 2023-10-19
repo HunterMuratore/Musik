@@ -1,33 +1,35 @@
 const { Model, DataTypes } = require("sequelize");
 const db = require("../config/connection");
 
-const dayjs = require("dayjs");
+class Post extends Model {}
 
-class Coo extends Model {}
-
-Coo.init(
+Post.init(
   {
-    text: {
+    bandName: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: {
         len: {
-          args: 3,
-          msg: "Your coo message must be at least 3 characters in length.",
+          args: [2],
+          msg: "Name of the band here!",
         },
       },
     },
-    date: {
-      type: DataTypes.VIRTUAL,
-      get() {
-        return dayjs(this.createdAt).format("MM/DD/YYYY hh:mma");
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: {
+          args: [3],
+          msg: "Write about the band here!",
+        },
       },
     },
   },
   {
-    modelName: "user_coos",
+    modelName: "user_posts",
     freezeTableName: true,
     sequelize: db,
   }
 );
-
-module.exports = Coo;
+module.exports = Post;
