@@ -1,14 +1,14 @@
 const router = require("express").Router();
-
-// Import the User model
+const { Op } = require('sequelize');
 const User = require("../models/User.js");
 
-// localhost:3333/auth/register
-// Post request route that retrieves the form data(email, password) and creates a new user in the database, using our User model
+/* /auth routes */
 
 router.post("/register", async (req, res) => {
+  const data = req.body;
+
   try {
-    const user = await User.create(req.body);
+    const user = await User.create(data);
 
     req.session.user_id = user.id;
 
@@ -21,20 +21,26 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+  const data = req.body;
+
+  // Find the user with either the email or the username provided
   const user = await User.findOne({
     where: {
-      email: req.body.email,
+      [Op.or]: [
+        { email: data.email },
+        { username: data.username }
+      ]
     },
   });
 
   // User not found with the email address provided
   if (!user) {
-    req.session.errors = ["No user found with that email address."];
+    req.session.errors = ["No user found with that email or username."];
 
     return res.redirect("/login");
   }
 
-  const pass_is_valid = await user.validatePass(req.body.password);
+  const pass_is_valid = await user.validatePass(data.password);
 
   // Check if password is invalid
   if (!pass_is_valid) {
