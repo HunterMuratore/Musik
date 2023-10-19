@@ -1,0 +1,12 @@
+<form action="/auth/register" method="POST">
+  <h1>Sign up!</h1>
+
+  {{#each errors}}
+    <p class="error text-center">{{this}}</p>
+  {{/each}}
+
+  <input type="text" name="email" placeholder="Please enter your email address">
+  <input type="text" name="username" placeholder="Please enter your username">
+  <input type="password" name="password" placeholder="Please enter your password">
+  <button>Submit</button>
+</form>

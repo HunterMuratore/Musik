@@ -1,0 +1,21 @@
+<form action="post" method="POST">
+    <h1>What are you listening to?</h1>
+
+ {{#each errors}}
+    <p class="error text-center">{{this}}</p>
+  {{/each}}
+
+  <input type="text" name="bandName" placeholder="What band have you been listening to?">
+  <input type="text" name="comment" placeholder="Tell us what you think of them!">
+  <button>Submit</button>
+
+</form>
+
+
+<div>
+{{#each posts}}
+    <h3>{{bandName}}</h3>
+
+    <p>{{comment}} by {{author.username}}</p>
+{{/each}}
+</div>
