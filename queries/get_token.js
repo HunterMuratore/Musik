@@ -1,7 +1,5 @@
 const axios = require('axios');
 
-let new_token = null;
-
 function getSpotifyToken() {
     const url = 'https://accounts.spotify.com/api/token';
     const headers = {
@@ -26,23 +24,4 @@ function getSpotifyToken() {
       });
   }
 
-function refreshToken() {
-    getSpotifyToken()
-        .then(token => {
-            if(token) {
-                new_token = token;
-            }
-        });
-}
-
-// Initial token retrieval
-refreshToken();
-
-// Set the token to refresh every 45 minutes
-setInterval(refreshToken, 45 * 60 * 1000);
-
-module.exports = { new_token };
-
-// curl -X POST "https://accounts.spotify.com/api/token" \
-//      -H "Content-Type: application/x-www-form-urlencoded" \
-//      -d "grant_type=client_credentials&client_id=43743c2db80a47e19d719147c8da72dc&client_secret=5f7fe806eccd4cccb17c7be733249cae"
+module.exports = getSpotifyToken;

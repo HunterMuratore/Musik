@@ -2,6 +2,8 @@ const router = require('express').Router();
 const User = require('../models/User');
 const Post = require('../models/Post');
 const { authenticate, isLoggedIn, isAuthenticated } = require('../middleware/authenticate');
+const { getSongsByTitle } = require('../queries/get_song');
+
 
 /* / routes */
 
@@ -64,6 +66,14 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
     });
 
     req.session.errors = [];
+});
+
+router.get('/songs', isAuthenticated, authenticate, async(req, res) => {
+    const { items } = await getSongsByTitle(req.track);
+
+    res.render('songs', {
+        tracks: items
+    });
 });
 
 // Export the router

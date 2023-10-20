@@ -1,20 +1,56 @@
 const axios = require('axios');
 require('dotenv').config();
-const new_token = require('./get_token');
+const getSpotifyToken = require('./get_token');
 const spotifyUrl = 'https://api.spotify.com/v1/search?type=track';
 
-// Fetch song data from Spotify api
-async function getSpotifyData(query) {
-    const res = await axios.get(spotifyUrl + `&q=${query}`, {
-        headers: {
-          'Content-type': 'application/json',
-          'Authorization': `Bearer ${new_token}`
-        }
-    });
+let token;
+let time = 45 * 60 * 1000;
 
-    return res.data.tracks;
+function countdown() {
+  setInterval(async () => {
+    time -= 1000;
+
+    if (time <= 0) {
+      token = await getSpotifyToken();
+      time = 45 * 60 * 1000;
+    }
+  }, 1000);
 }
 
-module.exports = { getSpotifyData };
+// Fetch song data from Spotify api
+async function getSongsByTitle(query) {
+  token = token ? token : await getSpotifyToken();
+
+  const res = await axios.get(spotifyUrl + `&q=${query}`, {
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return res.data.tracks;
+}
+
+async function getSong(id) {
+  const url = 'https://api.spotify.com/v1/tracks/'
+
+  token = token ? token : await getSpotifyToken();
+
+  const res = await axios.get(url + id, {
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return res.data;
+}
+
+countdown();
+getSong('19YmvsVCetCBeVj6O2mljR').then(data => {
+  console.log(data)
+})
+
+module.exports = { getSongsByTitle, getSong };
 
 
