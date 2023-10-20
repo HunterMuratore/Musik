@@ -2,10 +2,9 @@ const router = require('express').Router();
 
 /* /post routes */
 
-// Create a Post
+// Send the user to /songs so they can choose which song they want to post
 router.post('/profile', async (req, res) => {
     try {
-
         req.track = req.body.track;
 
         res.redirect('/songs');
