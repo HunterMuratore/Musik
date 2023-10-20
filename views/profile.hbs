@@ -5,16 +5,14 @@
     <p class="error text-center">{{this}}</p>
   {{/each}}
 
-  <input type="text" name="bandName" placeholder="What band have you been listening to?">
-  <input type="text" name="comment" placeholder="Tell us what you think of them!">
+  <input type="text" name="track" placeholder="What song are you listening to?">
+  <input type="text" name="comment" placeholder="Tell us what you think of it!">
   <button>Submit</button>
-
 </form>
-
 
 <div>
 {{#each posts}}
-    <h3>{{bandName}}</h3>
+    <h3>{{track}}</h3>
 
     <p>{{comment}} by {{author.username}}</p>
 {{/each}}
