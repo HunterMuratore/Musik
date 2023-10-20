@@ -25,8 +25,7 @@ app.use(session({
 }));
 
 // Open routes at the root level
-app.use('/', view_routes);
-app.use('/post', createPost_routes);
+app.use('/', view_routes, createPost_routes);
 app.use('/auth', user_routes);
 
 // Sync and create tables
