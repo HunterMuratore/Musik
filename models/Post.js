@@ -13,10 +13,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    album_cover: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // album_cover: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     album_name: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -10,10 +10,14 @@
   <button>Submit</button>
 </form>
 
-<div>
-{{#each posts}}
-    <h3>{{track}}</h3>
-
-    <p>{{comment}} by {{author.username}}</p>
+<section>
+  {{#each posts as |post|}}
+    <div class="song-card">
+      <p>{{post.track}}</p>
+      <p>{{post.artist}}</p>
+      <p>{{post.album_cover}}</p>
+      <p>{{post.album_name}}</p>
+      <p>{{post.comment}} by {{author.username}}</p>
+    </div>
 {{/each}}
-</div>
+</section>

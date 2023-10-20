@@ -47,9 +47,9 @@ async function getSong(id) {
 }
 
 countdown();
-getSong('19YmvsVCetCBeVj6O2mljR').then(data => {
-  console.log(data)
-})
+// getSong('19YmvsVCetCBeVj6O2mljR').then(data => {
+//   console.log(data)
+// })
 
 module.exports = { getSongsByTitle, getSong };
 
