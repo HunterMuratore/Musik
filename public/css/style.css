@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover:not(:first-child) {
+    text-decoration: underline;
+}
+
+header nav > *:not(:last-child) {
+    margin-right: 8px;
+}
+
+form {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    margin: 35px auto 0 
+}
+
+form > * {
+    padding: 7px 10px;
+    margin: 5px 0;
+}
+
+form h1 {
+    text-align: center;
+}
+
+form input {
+    border: 1px solid black;
+    margin-bottom: 7px;
+}
+
+form p.error {
+    color: red;
+}
+
+.post-output {
+    margin-top: 30px;
+}
+
+.song-card {
+    margin-bottom: 15px;
+}
