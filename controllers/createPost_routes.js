@@ -4,8 +4,9 @@ const router = require('express').Router();
 router.post('/profile', async (req, res) => {
     try {
         req.track = req.body.track;
+        req.comment = req.body.comment;
         
-        res.redirect(`/songs/${req.track}`);
+        res.redirect(`/songs?id=${req.track}&comment=${req.comment}`);
     } catch (err) {
         console.log(err);
         if(err.errors) {

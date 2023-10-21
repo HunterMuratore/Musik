@@ -5,14 +5,16 @@ const Post = require('../models/Post');
 
 router.get('/song', async (req, res) => {
     const id = req.query.id;
+    const comment = req.query.comment;
     const song = await getSong(id);
 
     const songData = {
+        // author_id: authorId,
         track: song.name,
         artist: song.artists[0].name,
-        // album_cover: song.album.images[0],
+        album_cover: song.album.images[0].url,
         album_name: song.album.name,
-        comment: req.body.comment
+        comment: comment
     }
 
     // Create a post
