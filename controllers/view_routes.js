@@ -68,12 +68,20 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
     req.session.errors = [];
 });
 
-router.get('/songs', isAuthenticated, authenticate, async(req, res) => {
-    const { items } = await getSongsByTitle(req.track);
-
-    res.render('songs', {
-        tracks: items
-    });
+router.get('/songs/:track', isAuthenticated, authenticate, async(req, res) => {
+    try {
+        const track = req.params.track;
+        const { items } = await getSongsByTitle(track);
+        console.log(items);
+        
+        res.render('songs', {
+            tracks: items
+        });
+    } catch (err) {
+        // Handle any errors that may occur during the Spotify API request.
+        console.error(err);
+        res.redirect('/profile');
+    }
 });
 
 // Export the router
