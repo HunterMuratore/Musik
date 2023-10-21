@@ -13,10 +13,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // album_cover: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    album_cover: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     album_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -24,7 +24,16 @@ Post.init(
     comment: {
       type: DataTypes.STRING(500),
       allowNull: true,
-    }
+    },
+    // author_id: {
+    //   type: DataTypes.INTEGER, 
+    //   allowNull: false,
+    //   references: {
+    //     model: "user", 
+    //     key: "id", 
+    //     onDelete: "CASCADE"
+    //   },
+    // },
   },
   {
     modelName: "user_posts",
