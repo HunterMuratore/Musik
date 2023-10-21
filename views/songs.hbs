@@ -1,7 +1,9 @@
-<ul>
-    {{#each tracks as |track|}}
+<section>
+    <ul>
+        {{#each tracks as |track|}}
         <li>
             <a href="/song?id={{track.id}}">{{track.album.name}}</a>
         </li>
-    {{/each}}
-</ul>
+        {{/each}}
+    </ul>
+</section>

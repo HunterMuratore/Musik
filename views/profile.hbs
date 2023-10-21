@@ -1,16 +1,17 @@
-<form action="/profile" method="POST">
-    <h1>What are you listening to?</h1>
+<form id="postForm" action="/profile" method="POST">
+  <h1>What are you listening to?</h1>
 
- {{#each errors}}
+  {{#each errors}}
     <p class="error text-center">{{this}}</p>
   {{/each}}
 
   <input type="text" name="track" placeholder="What song are you listening to?" required>
-  <input type="text" name="comment" placeholder="Tell us what you think of it!">
-  <button>Submit</button>
+  <input type="text" id="inputField" name="comment" placeholder="Tell us what you think of it!">
+  <p>Character count: <span id="charCount">0</span>/500</p>
+  <button id="submitBtn" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Submit</button>
 </form>
 
-<section>
+<section class="col align-center post-output">
   {{#each posts as |post|}}
     <div class="song-card">
       <p>{{post.track}}</p>
