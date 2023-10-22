@@ -6,9 +6,8 @@ router.post('/profile', isAuthenticated, authenticate, async (req, res) => {
     try {
         req.track = req.body.track;
         req.comment = req.body.comment;
-        const user_id = req.session.user_id;
         
-        res.redirect(`/songs?id=${req.track}&comment=${req.comment}&user_id=${user_id}`);
+        res.redirect(`/songs?id=${req.track}&comment=${req.comment}`);
     } catch (err) {
         console.log(err);
         if(err.errors) {
