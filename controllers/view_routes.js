@@ -66,5 +66,11 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
     req.session.errors = [];
 });
 
+router.get('/search', (req, res) => {
+    res.render('search_form', {
+        user: req.user
+    })
+});
+
 // Export the router
 module.exports = router;
