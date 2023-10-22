@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { getSong, getSongsByTitle } = require('../queries/get_song');
+const { getSong } = require('../queries/get_song');
 const Post = require('../models/Post');
+const { authenticate, isAuthenticated } = require('../middleware/authenticate');
 
 
-router.get('/song', async (req, res) => {
+router.get('/song', isAuthenticated, authenticate, async (req, res) => {
     const id = req.query.id;
     const comment = req.query.comment;
     const song = await getSong(id);
 
     const songData = {
-        // author_id: authorId,
         track: song.name,
         artist: song.artists[0].name,
         album_cover: song.album.images[0].url,
@@ -18,9 +18,20 @@ router.get('/song', async (req, res) => {
     }
 
     // Create a post
-    await Post.create(songData);
+    try {
+        const newPost = await Post.create(songData);
 
-    res.redirect('/profile');
+        // Add the Post to the user in the session
+        await req.user.addPost(newPost);
+
+        res.redirect('/profile');
+    } catch (err) {
+        console.log(err);
+        if (err.errors) {
+            req.session.errors = err.errors.map(errObj => errObj.message);
+        }
+        res.redirect('/profile');
+    }
 });
 
 module.exports = router;

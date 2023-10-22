@@ -28,7 +28,12 @@ async function authenticate(req, res, next) {
             attributes: ['id', 'username']
         });
 
-        req.user = user.get({ plain: true });
+        if (user) {
+            // Assign the Sequelize model instance to req.user
+            req.user = user;
+        } else {
+            req.user = null;
+        }
     }
 
     next();
