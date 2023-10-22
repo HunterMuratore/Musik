@@ -1,31 +1,16 @@
 <section>
-
   <ul>
-
     {{#each tracks as |track|}}
-
       <li>
-
         <a href="/song?id={{track.id}}&comment={{comment}}">{{track.album.name}}
-
           -
-
           {{#each track.album.artists as |artist|}}
-
             {{artist.name}}
-
           {{/each}}
-
         </a>
-
         <img src="{{track.album.images.0.url}}" alt="{{track.album.name}}" />
-
         <hr />
-
       </li>
-
     {{/each}}
-
   </ul>
-
 </section>
