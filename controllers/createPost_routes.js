@@ -4,16 +4,29 @@ const { authenticate, isAuthenticated } = require('../middleware/authenticate');
 // Send the user to /songs so they can choose which song they want to post
 router.post('/profile', isAuthenticated, authenticate, async (req, res) => {
     try {
-        req.track = req.body.track;
-        req.comment = req.body.comment;
+        const track = req.body.track;
+        const comment = req.body.comment;
 
-        console.log('createPost_routes /profile req.comment', req.comment)
-        
-        res.redirect(`/songs?id=${req.track}&comment=${encodeURIComponent(req.comment)}`);
+        const song = await getSong(track);
+
+        const songData = {
+            track: song.name,
+            artist: song.artists[0].name,
+            album_cover: song.album.images[0].url,
+            album_name: song.album.name,
+            comment: comment,
+        };
+
+        const newPost = await Post.create(songData);
+
+        // Add the Post to the user in the session
+        await req.user.addPost(newPost);
+
+        res.redirect('/profile');
     } catch (err) {
         console.log(err);
-        if(err.errors) {
-            req.session.errors = err.errors.map(errObj => errObj.message);
+        if (err.errors) {
+            req.session.errors = err.errors.map((errObj) => errObj.message);
         }
         res.redirect('/profile');
     }

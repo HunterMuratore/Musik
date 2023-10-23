@@ -26,7 +26,6 @@ router.get('/', authenticate, async (req, res) => {
 // Show the register form if the user is not logged in
 router.get('/register', isLoggedIn, authenticate, (req, res) => {
     res.render('register', {
-        // If there are any session errors from them trying to register then they will be sent through to this page for us to use
         errors: req.session.errors,
         user: req.user
     });
@@ -66,25 +65,6 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
     });
 
     req.session.errors = [];
-});
-
-router.get('/songs', isAuthenticated, authenticate, async(req, res) => {
-    try {
-        const track = req.query.id;
-        const userComment = req.query.comment;
-        const { items } = await getSongsByTitle(track);
-        
-        console.log('view_routes /songs comment', userComment)
-
-        res.render('songs', {
-            tracks: items,
-            comment: encodeURIComponent(userComment),
-        });
-    } catch (err) {
-        // Handle any errors that may occur during the Spotify API request.
-        console.error(err);
-        res.redirect('/profile');
-    }
 });
 
 // Export the router

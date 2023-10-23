@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getSong } = require('../queries/get_song');
+const { getSong, getSongsByTitle } = require('../queries/get_song');
 const Post = require('../models/Post');
 const { authenticate, isAuthenticated } = require('../middleware/authenticate');
 
@@ -32,6 +32,15 @@ router.get('/song', isAuthenticated, authenticate, async (req, res) => {
       req.session.errors = err.errors.map((errObj) => errObj.message);
     }
     res.redirect('/profile');
+  }
+});
+
+router.get('/song/:title', async (req, res) => {
+  try {
+    const results = await getSongsByTitle(req.params.title);
+    res.json(results.items);
+  } catch (err) {
+    console.log(err);
   }
 });
 
