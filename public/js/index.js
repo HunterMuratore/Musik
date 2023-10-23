@@ -22,10 +22,10 @@ trackField.on('input', function () {
 
             results.forEach(result => {
                 resultOutput.append(`
-                <option value="${result.id}">Album: <img src="${result.album.images[0].url}" class="w-10 h-10"> ${result.album.name}</option>
+                <option value="${result.id}">Album: <img src="${result.album.images[0].url}"> ${result.album.name}</option>
                 `)
             });
-        }, 2 * 1000);
+        }, 1 * 1000);
     }
 });
 
