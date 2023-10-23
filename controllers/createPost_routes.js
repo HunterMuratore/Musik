@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { authenticate, isAuthenticated } = require('../middleware/authenticate');
+const { getSong } = require('../queries/get_song');
+const Post = require('../models/Post');
 
-// Send the user to /songs so they can choose which song they want to post
 router.post('/profile', isAuthenticated, authenticate, async (req, res) => {
     try {
         const track = req.body.track;

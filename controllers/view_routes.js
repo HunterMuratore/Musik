@@ -67,5 +67,12 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
     req.session.errors = [];
 });
 
+// Show about us page
+router.get('/about_us', async (req, res) => {      
+    res.render('about_us');
+
+    req.session.errors = [];
+});
+
 // Export the router
 module.exports = router;
