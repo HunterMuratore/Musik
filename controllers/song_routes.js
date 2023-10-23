@@ -1,12 +1,14 @@
-const router = require("express").Router();
-const { getSong } = require("../queries/get_song");
-const Post = require("../models/Post");
-const { authenticate, isAuthenticated } = require("../middleware/authenticate");
+const router = require('express').Router();
+const { getSong } = require('../queries/get_song');
+const Post = require('../models/Post');
+const { authenticate, isAuthenticated } = require('../middleware/authenticate');
 
-router.get("/song", isAuthenticated, authenticate, async (req, res) => {
+router.get('/song', isAuthenticated, authenticate, async (req, res) => {
   const id = req.query.id;
   const comment = req.query.comment;
   const song = await getSong(id);
+  
+  console.log('song_routes /song comment', comment)
 
   const songData = {
     track: song.name,
@@ -23,13 +25,13 @@ router.get("/song", isAuthenticated, authenticate, async (req, res) => {
     // Add the Post to the user in the session
     await req.user.addPost(newPost);
 
-    res.redirect("/profile");
+    res.redirect('/profile');
   } catch (err) {
     console.log(err);
     if (err.errors) {
       req.session.errors = err.errors.map((errObj) => errObj.message);
     }
-    res.redirect("/profile");
+    res.redirect('/profile');
   }
 });
 

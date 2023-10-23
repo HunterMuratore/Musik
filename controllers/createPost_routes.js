@@ -6,8 +6,10 @@ router.post('/profile', isAuthenticated, authenticate, async (req, res) => {
     try {
         req.track = req.body.track;
         req.comment = req.body.comment;
+
+        console.log('createPost_routes /profile req.comment', req.comment)
         
-        res.redirect(`/songs?id=${req.track}&comment=${req.comment}`);
+        res.redirect(`/songs?id=${req.track}&comment=${encodeURIComponent(req.comment)}`);
     } catch (err) {
         console.log(err);
         if(err.errors) {

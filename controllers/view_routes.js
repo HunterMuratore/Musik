@@ -70,15 +70,15 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
 
 router.get('/songs', isAuthenticated, authenticate, async(req, res) => {
     try {
-        const user_id = req.session.user_id;
         const track = req.query.id;
         const userComment = req.query.comment;
         const { items } = await getSongsByTitle(track);
         
+        console.log('view_routes /songs comment', userComment)
+
         res.render('songs', {
             tracks: items,
             comment: encodeURIComponent(userComment),
-            user_id: user_id
         });
     } catch (err) {
         // Handle any errors that may occur during the Spotify API request.
