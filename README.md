@@ -37,11 +37,11 @@ If you used any third-party assets that require attribution, list the creators w
 
 If you followed tutorials, include links to those here as well.
 
-Hunter Muratore (https://github.com/HunterMuratore) 
-Brandon Myers (https://github.com/brandonom) 
-Alex Pohlman (https://github.com/apohl53)  
-Kevin Castro (https://github.com/Kev-Castro) 
-David Duran (https://github.com/ddurandev) 
+- Hunter Muratore (https://github.com/HunterMuratore) 
+- Brandon Myers (https://github.com/brandonom) 
+- Alex Pohlman (https://github.com/apohl53)  
+- Kevin Castro (https://github.com/Kev-Castro) 
+- David Duran (https://github.com/ddurandev) 
 
 ## License
 
@@ -49,7 +49,15 @@ Please refer to the LICENSE in the repo.
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+![test](https://img.shields.io/badge/License-MIT-blue)
+![test](https://img.shields.io/badge/Axios-V1.5.1-purple)
+![test](https://img.shields.io/badge/TailwindCSS-V3.3.3-dodgerblue)
+![test](https://img.shields.io/badge/Handlebars-V4.7.8-orange)
+![test](https://img.shields.io/badge/Nodemon-V3.0.1-green)
+![test](https://img.shields.io/badge/JavaScript-54.20%-yellow)
+![test](https://img.shields.io/badge/Express-V4.18.2-red)
+![test](https://img.shields.io/badge/CSS-2.60%-white)
+
 
 Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
