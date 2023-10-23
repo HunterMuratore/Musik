@@ -6,41 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Musik</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <header class='bg-white'>
     <nav class="bg-white border-white dark:bg-white">
-      <a href="/">
+      <div class="max-w-screen-xl px-4 md:max-w-screen-xl md:px-0 flex flex-wrap items-center justify-between mx-auto">
+        <a href="/">
+          <img class="w-20 h-20" src="/assets/images/Musik_(6).png" alt="musik_logo_still">
+        </a>
+        <div class="flex items-center md:order-2">
+          {{#if user}}
+          <a href="/profile"
+            class="block pl-4 py-2 mr-2 ml-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
+          <div class="h-4 w-px bg-slate-500/20"></div>
 
-        <div
-          class=" max-w-screen-xl px-4 md:max-w-screen-xl md:px-0 flex flex-wrap items-center justify-between mx-auto">
-          <div class="w-32 h-16">
-            <video class="w-full h-full object-cover object-center" autoplay loop muted playsinline>
-              <source src="/assets/video/musik.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-      </a>
-      <div class="flex items-center md:order-2">
-        {{#if user}}
-        <a href="/profile"
-          class="block pl-4 py-2 mr-2 ml-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
-        <div class="h-4 w-px bg-slate-500/20"></div>
+          <a href="/auth/logout"
+            class="block pl-4 py-2 ml-3 mr-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</a>
+          {{else}}
+          <a href="/login"
+            class="block pl-4 py-2 mr-2 ml-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+          <div class="h-4 w-px bg-slate-500/20"></div>
 
-        <a href="/auth/logout"
-          class="block pl-4 py-2 ml-3 mr-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Logout</a>
-        {{else}}
-        <a href="/login"
-          class="block pl-4 py-2 mr-2 ml-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
-        <div class="h-4 w-px bg-slate-500/20"></div>
-
-        <a href="/register"
-          class="block pl-4 py-2 ml-3 mr-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Register</a>
-        {{/if}}
+          <a href="/register"
+            class="block pl-4 py-2 ml-3 mr-2 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Register</a>
+          {{/if}}
+        </div>
       </div>
-
     </nav>
   </header>
 
@@ -48,10 +44,10 @@
 
   <footer class="mx-auto mt-25 w-full max-w-container px-4 sm:px-6 lg:px-8">
     <div class="border-t border-slate-900/5 py-3">
-      <p class="mt-5 text-center text-sm leading-6 text-slate-500">© 2023 Musik LLC. All rights reserved.</p>
-      <div class="mt-10 flex items-center justify-center space-x-4 text-sm font-semibold leading-6 text-slate-700">
+      <div class="mt-2 flex items-center justify-center space-x-4 text-sm font-semibold leading-6 text-slate-700">
         <a href="/about_us">About us</a>
       </div>
+      <p class="mt-2 text-center text-sm leading-6 text-slate-500">© 2023 Musik LLC. All rights reserved.</p>
     </div>
   </footer>
 

@@ -15,6 +15,7 @@ router.post('/profile', isAuthenticated, authenticate, async (req, res) => {
             artist: song.artists[0].name,
             album_cover: song.album.images[0].url,
             album_name: song.album.name,
+            audio_url: song.preview_url,
             comment: comment,
         };
 

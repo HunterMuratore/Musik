@@ -53,10 +53,6 @@ form p.error {
     margin-top: 30px;
 }
 
-.song-card {
-    margin-bottom: 15px;
-}
-
 footer {
     margin-top: auto;
 }
@@ -71,4 +67,14 @@ footer {
     border-radius: 20px;
     padding: 5px 10px;
     margin-top: 5px;
+}
+
+.post-section {
+    margin: 0 20px;
+}
+
+.song-card {
+    margin-bottom: 15px;
+    border: 1px solid lightgray;
+    max-width: 350px;
 }

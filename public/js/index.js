@@ -3,6 +3,9 @@ const trackField = $('#trackField');
 const charCount = $('#charCount');
 const form = $('#postForm');
 const submitButton = $('#submitBtn');
+const audioButtons = $('.audio-control-btn');
+let currentAudio = null;
+
 
 async function getSongs(value) {
     const results = await fetch('/song/' + value).then(res => res.json());
@@ -36,7 +39,7 @@ commentField.on('input', function () {
     charCount.text(commentLength);
 
     // Disable the submit button if character count exceeds 500
-    if (commentLength > 500) {
+    if (commentLength > 100) {
         charCount.css('color', 'red');
         submitButton.prop('disabled', true);
     } else {
@@ -47,7 +50,33 @@ commentField.on('input', function () {
 
 form.on('submit', function (event) {
     const commentLength = commentField.val().length;
-    if (commentLength > 500) {
+    if (commentLength > 100) {
         event.preventDefault(); // Prevent form submission
     }
 });
+
+audioButtons.on('click', function() {
+    const audioUrl = $(this).data('audio');
+
+    if (currentAudio && !currentAudio.paused) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio = null;
+      $(this).html('<i class="fa-solid fa-play" style="color: #71d26a;"></i>');
+    } else {
+      if (currentAudio) {
+        currentAudio.play();
+      } else {
+        currentAudio = new Audio(audioUrl);
+        currentAudio.volume = .05;
+        currentAudio.play();
+        currentAudio.onended = function() {
+          $(this).html('<i class="fa-solid fa-play" style="color: #71d26a;"></i>');
+        };
+      }
+      $(this).html('<i class="fa-solid fa-stop" style="color: #71d26a;"></i>');
+    }
+  });
+
+
+ 

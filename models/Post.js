@@ -21,8 +21,11 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    audio_url: {
+      type: DataTypes.STRING,
+    },
     comment: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(100),
       allowNull: true,
     },
   },
