@@ -1,20 +1,18 @@
 const router = require('express').Router();
-const Post = require('../models/Post');
 const { authenticate, isAuthenticated } = require('../middleware/authenticate');
 
-/* /post routes */
-
-// Create a Post
+// Send the user to /songs so they can choose which song they want to post
 router.post('/profile', isAuthenticated, authenticate, async (req, res) => {
     try {
-        const post = await Post.create(req.body);
-
-        // Add the Post to the user in the session
-        await req.user.addPost(post);
-
-        res.redirect('/profile');
+        req.track = req.body.track;
+        req.comment = req.body.comment;
+        
+        res.redirect(`/songs?id=${req.track}&comment=${req.comment}`);
     } catch (err) {
-        req.session.errors = err.errors.map(errObj => errObj.message);
+        console.log(err);
+        if(err.errors) {
+            req.session.errors = err.errors.map(errObj => errObj.message);
+        }
         res.redirect('/profile');
     }
 });

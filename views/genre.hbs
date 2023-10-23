@@ -1,0 +1,12 @@
+
+
+
+  {{#each posts}}
+  <div>
+    {{#if (eq genre selectedGenre)}}
+      <h3>{{track}}</h3>
+      <p>{{comment}} by {{author.username}}</p>
+      <p>Genre: {{genre}}</p>
+    {{/if}}
+  </div>
+  {{/each}}

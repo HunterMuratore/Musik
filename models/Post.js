@@ -5,25 +5,25 @@ class Post extends Model {}
 
 Post.init(
   {
-    bandName: {
+    track: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: {
-          args: [2],
-          msg: "Name of the band here!",
-        },
-      },
+    },
+    artist: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    album_cover: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    album_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     comment: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: {
-          args: [3],
-          msg: "Write about the band here!",
-        },
-      },
+      type: DataTypes.STRING(500),
+      allowNull: true,
     },
   },
   {
@@ -32,4 +32,5 @@ Post.init(
     sequelize: db,
   }
 );
+
 module.exports = Post;

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('../models/User');
 const Post = require('../models/Post');
 const { authenticate, isLoggedIn, isAuthenticated } = require('../middleware/authenticate');
+const { getSongsByTitle } = require('../queries/get_song');
 
 /* / routes */
 
@@ -47,6 +48,7 @@ router.get('/login', isLoggedIn, authenticate, (req, res) => {
 // Show profile only if the user is authenticated
 router.get('/profile', isAuthenticated, authenticate, async (req, res) => {    
     const user_id = req.session.user_id;
+    
     // Find all of the Posts by the user
     const posts = await Post.findAll({
         where: {
@@ -66,10 +68,23 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
     req.session.errors = [];
 });
 
-router.get('/search', (req, res) => {
-    res.render('search_form', {
-        user: req.user
-    })
+router.get('/songs', isAuthenticated, authenticate, async(req, res) => {
+    try {
+        const user_id = req.session.user_id;
+        const track = req.query.id;
+        const userComment = req.query.comment;
+        const { items } = await getSongsByTitle(track);
+        
+        res.render('songs', {
+            tracks: items,
+            comment: encodeURIComponent(userComment),
+            user_id: user_id
+        });
+    } catch (err) {
+        // Handle any errors that may occur during the Spotify API request.
+        console.error(err);
+        res.redirect('/profile');
+    }
 });
 
 // Export the router
