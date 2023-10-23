@@ -3,8 +3,8 @@
 ## Description
 
 The Musik app is a project to connect users who will be able to share songs and posts with each other. We want to create a community of music lovers who have similar interests.
-As fellow music lovers we want to have a place where it is just about music. This project was built to have like minded individuals to come together and make a community.
-Musik brings those people to meet and post about music we are listening to. We learned how to make a social media hub for only music lovers.
+As fellow music lovers we want to have create a place just for music. This project was built to have like minded individuals to come together and create a community.
+Musik brings users to meet and post about music others are listening to. We learned how to make a social media hub for only music lovers.
 
 ## Table of Contents
 
