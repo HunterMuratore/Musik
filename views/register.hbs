@@ -1,12 +1,14 @@
-<form action="/auth/register" method="POST">
+<form class="mt-10" action="/auth/register" method="POST">
   <h1>Sign up!</h1>
 
   {{#each errors}}
-    <p class="error text-center">{{this}}</p>
+  <p class="error text-center">{{this}}</p>
   {{/each}}
 
-  <input type="text" name="email" placeholder="Please enter your email address">
-  <input type="text" name="username" placeholder="Please enter your username">
-  <input type="password" name="password" placeholder="Please enter your password">
-  <button class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Sign Up</button>
+  <input class="text_input" type="text" name="email" placeholder="Please enter your email address">
+  <input class="text_input" type="text" name="username" placeholder="Please enter your username">
+  <input class="text_input" type="password" name="password" placeholder="Please enter your password">
+  <button
+    class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Sign
+    Up</button>
 </form>

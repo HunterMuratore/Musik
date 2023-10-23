@@ -5,7 +5,8 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -16,24 +17,15 @@ a {
     text-decoration: none;
 }
 
-a:hover:not(:first-child) {
-    text-decoration: underline;
-}
-
-header nav > *:not(:last-child) {
+header nav>*:not(:last-child) {
     margin-right: 8px;
 }
 
 form {
-    width: 380px;
+    width: 320px;
     display: flex;
     flex-direction: column;
-    margin: 35px auto 0 
-}
-
-form > * {
-    padding: 7px 10px;
-    margin: 5px 0;
+    margin: 35px auto 0
 }
 
 form h1 {
@@ -59,4 +51,99 @@ form p.error {
 
 footer {
     margin-top: auto;
+}
+
+html {
+    background-color: white;
+}
+
+.hero {
+    background-color: black !important;
+}
+
+.input {
+    top: -30px;
+    text-align: center;
+}
+
+.input,
+textarea {
+    width: 40% !important;
+}
+
+.logo {
+    max-height: 7.75rem !important;
+}
+
+a {
+    color: lightskyblue;
+}
+
+
+.navbar-item.is-tab {
+    border-bottom: 1px solid transparent !important;
+    min-height: 3.25rem !important;
+    padding-bottom: calc(0.5rem - 1px) !important;
+}
+
+.my-4 {
+    margin-top: 0rem !important;
+    margin-bottom: -17rem !important;
+    margin-left: -152px !important;
+}
+
+
+.nav_selection {
+    position: relative !important;
+    left: -50px !important;
+}
+
+.nav_dropdown {
+
+    left: -160px !important;
+}
+
+.navbar_selection {
+    position: relative !important;
+    left: -114.35px !important;
+}
+
+.test_img {
+    height: 60%;
+}
+
+.max-w-screen-xl {
+    max-width: 1125px !important;
+}
+
+.track_selector {
+    text-align: center;
+    position: relative;
+    top: 4px;
+}
+
+.profile_input {
+    border-radius: 6px;
+    padding: 4px;
+    margin: 5px;
+}
+
+.text_input {
+    border-radius: 6px;
+    padding: 4px;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+.album_cover {
+    border-radius: 50%;
+}
+
+.nav_resize {
+    width: 96px !important;
+    height: 32px !important;
+}
+
+.charcount {
+    text-align: center;
 }
