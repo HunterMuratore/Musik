@@ -6,7 +6,7 @@ The Musik app is a project to connect users who will be able to share songs and 
 As fellow music lovers we want to have a place where it is just about music. This project was built to have like minded individuals to come together and make a community.
 Musik brings those people to meet and post about music we are listening to. We learned how to make a social media hub for only music lovers.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
@@ -50,13 +50,13 @@ Please refer to the LICENSE in the repo.
 ## Badges
 
 ![test](https://img.shields.io/badge/License-MIT-blue)
-![test](https://img.shields.io/badge/Axios-V1.5.1-purple)
-![test](https://img.shields.io/badge/TailwindCSS-V3.3.3-dodgerblue)
-![test](https://img.shields.io/badge/Handlebars-V4.7.8-orange)
-![test](https://img.shields.io/badge/Nodemon-V3.0.1-green)
-![test](https://img.shields.io/badge/JavaScript-54.20%-yellow)
-![test](https://img.shields.io/badge/Express-V4.18.2-red)
-![test](https://img.shields.io/badge/CSS-2.60%-white)
+![axios](https://img.shields.io/badge/Axios-V1.5.1-purple)
+![tailwind](https://img.shields.io/badge/TailwindCSS-V3.3.3-dodgerblue)
+![handlebars](https://img.shields.io/badge/Handlebars-V4.7.8-orange)
+![nodemon](https://img.shields.io/badge/Nodemon-V3.0.1-green)
+![javascript](https://img.shields.io/badge/JavaScript-54.20%-yellow)
+![express](https://img.shields.io/badge/Express-V4.18.2-red)
+![css](https://img.shields.io/badge/CSS-2.60%-white)
 
 
 Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
