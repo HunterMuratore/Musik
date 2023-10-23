@@ -1,8 +1,7 @@
 <section class="col align-center post-output">
   {{#each posts as |post|}}
     <div class="song-card">
-      <p>{{post.track}}</p>
-      <p>{{post.artist}}</p>
+      <p>{{post.artist}} - {{post.track}}</p>
       <p>{{post.album_name}}</p>
       <img
         src="{{post.album_cover}}"
