@@ -14,21 +14,27 @@
   <input class="profile_input" type="text" id="trackField" placeholder="What song are you listening to?" required />
   <label class="track_selector" for="">Choose the correct track:</label>
   <select name="track" class="results"></select>
-  <input class="profile_input" type="text" id="commentField" name="comment"
-    placeholder="Tell us what you think of it!" />
-  <p class="charcount">Character count: <span id="charCount">0</span>/500</p>
+  <input type="text" id="commentField" name="comment" placeholder="Tell us what you think of it!" />
+  <p>Character count: <span id="charCount">0</span>/100</p>
   <button id="submitBtn"
     class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Submit</button>
 </form>
 
-<section class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto sm:mx-0">
+<section class="post-section text-center mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   {{#each posts as |post|}}
   <div class="song-card bg-white p-4 rounded-lg shadow-md">
-    <p>{{author.username}} is listening to</p>
-    <img src="{{post.album_cover}}" alt="{{post.album_name}} Cover" class="album-cover" />
-    <h2>{{post.track}} - {{post.artist}}</h2>
+    <p class ="text-sm">{{author.username}} is listening to</p>
+    <img src="{{post.album_cover}}" alt="{{post.album_name}} Cover" class="w-40 h-40 mx-auto my-1"/>
+    <h2 >
+      <span class="font-semibold">{{post.track}}</span> - {{post.artist}}</h2>
     <p>{{post.album_name}}</p>
+    <p><button class="audio-control-btn" data-audio="{{post.audio_url}}">
+      <i class="fa-solid fa-play" style="color: #71d26a;"></i>
+    </button><span class="ms-2">Play</span></p>
+    {{#if post.comment}}
     <p class="comment">{{post.comment}}</p>
+    {{else}}
+    {{/if}}
   </div>
   {{/each}}
 </section>
