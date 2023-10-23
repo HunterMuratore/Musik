@@ -5,19 +5,38 @@
     <p class="error text-center">{{this}}</p>
   {{/each}}
 
-  <input type="text" name="track" placeholder="What song are you listening to?" required>
-  <input type="text" id="inputField" name="comment" placeholder="Tell us what you think of it!">
+  <input
+    type="text"
+    name="track"
+    placeholder="What song are you listening to?"
+    required
+  />
+  <input
+    type="text"
+    id="inputField"
+    name="comment"
+    placeholder="Tell us what you think of it!"
+  />
   <p>Character count: <span id="charCount">0</span>/500</p>
-  <button id="submitBtn" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Submit</button>
+  <button
+    id="submitBtn"
+    class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+  >Submit</button>
 </form>
 
 <section class="col align-center post-output">
   {{#each posts as |post|}}
     <div class="song-card">
-      <p>{{post.track}}</p>
-      <p>{{post.artist}}</p>
-      <p>{{post.album_cover}}</p>
-      <p>{{post.album_name}}</p>
+      <div class="flex items-center">
+        <p>{{post.artist}} -</p>
+        <p class="ml-1">{{post.track}}</p>
+      </div>
+      <p class="ml-2">{{post.album_name}}</p>
+      <img
+        src="{{post.album_cover}}"
+        alt="{{post.album_name}}"
+        class="w-40 h-40"
+      />
       <p>{{post.comment}} by {{author.username}}</p>
     </div>
   {{/each}}
