@@ -71,8 +71,10 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
 });
 
 // Show about us page
-router.get('/about_us', async (req, res) => {      
-    res.render('about_us');
+router.get('/about_us', isAuthenticated, authenticate, async (req, res) => {      
+    res.render('about_us', {
+        user: req.user,
+    });
 
     req.session.errors = [];
 });
