@@ -12,18 +12,22 @@ Musik brings users to meet and post about music others are listening to. We lear
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Contribute]{#contribute}
 
 ## Usage
 
-When you first enter the home page press on the register button to sign up.
+### When you first enter the home page press on the register button to sign up.
+
 ![main-page](./public/assets/images/main-page.png)
 
-In the sign up page enter your email, username and password and press sign up.
-![main-page](./public/assets/images/Screenshot%20sign%20up.png)
+### In the sign up page enter your email, username and password and press sign up.
 
-Once you sign up, press the login button on the nav and fill in your Email, username, and password then press login.
-![main-page](./public/assets/images/login.png)
+![signup](./public/assets/images/Screenshot%20sign%20up.png)
+
+### In your profile page you can post what you are listening to. First, type the song name in the top box. After that choose the version of your song. Then leave your comments (optional) other users will see and finally press submit.
+
+![login](./public/assets/images/profile-page.png)
+
+### Your song will be posted on your profile and the home page.
 
 ## Credits
 
@@ -48,8 +52,6 @@ Please refer to the LICENSE in the repo.
 ![express](https://img.shields.io/badge/Express-V4.18.2-red)
 ![express](https://img.shields.io/badge/Dotenv-V16.3.1-palegoldenrod)
 ![express](https://img.shields.io/badge/Bcrypt-V5.1.1-darkseagreen)
-![javascript](https://img.shields.io/badge/JavaScript-54.20%-yellow)
-![css](https://img.shields.io/badge/CSS-2.60%-white)
 
 ## Contribute
 
