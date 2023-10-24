@@ -30,7 +30,7 @@ app.use('/', view_routes, createPost_routes, song_routes);
 app.use('/auth', user_routes);
 
 // Sync and create tables
-db.sync({ force: true })
+db.sync({ force: false })
     .then(() => {
         app.listen(PORT, () => console.log('Server started on port', PORT));
     });
