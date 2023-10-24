@@ -19,17 +19,19 @@ N/A
 
 ## Usage
 
-When you first enter the home page press on the register button to sign up.
+### When you first enter the home page press on the register button to sign up.
 
 ![main-page](./public/assets/images/main-page.png)
 
-In the sign up page enter your email, usernamen and password and press sign up.
+### In the sign up page enter your email, username and password and press sign up.
 
-![main-page](./public/assets/images/Screenshot%20sign%20up.png)
+![signup](./public/assets/images/Screenshot%20sign%20up.png)
 
-Once you sign up, press the login button on the nav and fill in your Email, username, and password then press login.
+### In your profile page you can post what you are listening to. First, type the song name in the top box. After that choose the version of your song. Then leave your comments (optional) other users will see and finally press submit.
 
-![main-page](./public/assets/images/login.png)
+![login](./public/assets/images/profile-page.png)
+
+### Your song will be posted on your profile and the home page.
 
 ## Credits
 
@@ -56,12 +58,9 @@ Please refer to the LICENSE in the repo.
 
 ## Features
 
-N/A
+
 
 ## How to Contribute
 
 N/A
 
-## Tests
-
-N/A
