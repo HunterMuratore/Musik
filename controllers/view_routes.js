@@ -16,10 +16,11 @@ router.get('/', authenticate, async (req, res) => {
         }
     });
 
-    res.render('home', { 
+    const reversedPosts = posts.map(p => p.get({ plain: true })).slice().reverse();
+
+    res.render('home', {
         user: req.user,
-        // Send back only the plain objects for the posts array
-        posts: posts.map(p => p.get({ plain: true }))
+        posts: reversedPosts
     });
 });
 
@@ -59,9 +60,11 @@ router.get('/profile', isAuthenticated, authenticate, async (req, res) => {
         }
     });
     
+    const reversedPosts = posts.map(p => p.get({ plain: true })).slice().reverse();
+
     res.render('profile', {
         user: req.user,
-        posts: posts.map(p => p.get({ plain: true }))
+        posts: reversedPosts
     });
 
     req.session.errors = [];
