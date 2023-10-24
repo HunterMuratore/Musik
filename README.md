@@ -12,7 +12,6 @@ Musik brings users to meet and post about music others are listening to. We lear
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Contribute]{#contribute}
 
 ## Usage
 
@@ -20,8 +19,7 @@ Musik brings users to meet and post about music others are listening to. We lear
 
 ![main-page](./public/assets/images/main-page.png)
 
-In the sign up page enter your email, username and password and press sign up.
-![main-page](./public/assets/images/Screenshot%20sign%20up.png)
+### In the sign up page enter your email, username and password and press sign up.
 
 ![signup](./public/assets/images/Screenshot%20sign%20up.png)
 
