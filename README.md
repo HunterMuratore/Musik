@@ -6,28 +6,33 @@ The Musik app is a project to connect users who will be able to share songs and 
 As fellow music lovers we want to have create a place just for music. This project was built to have like minded individuals to come together and create a community.
 Musik brings users to meet and post about music others are listening to. We learned how to make a social media hub for only music lovers.
 
+### Link to deployed app
+
+>[Musik](https://arcane-refuge-32686-92d3868f1b08.herokuapp.com/)
+
 ## Table of Contents
 
 - [Description](#description)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [Contribute](#contribute)
 
 ## Usage
 
-### When you first enter the home page press on the register button to sign up.
+### When you first enter the home page press on the register button to sign up
 
 ![main-page](./public/assets/images/main-page.png)
 
-### In the sign up page enter your email, username and password and press sign up.
+### In the sign up page enter your email, username and password and press sign up
 
 ![signup](./public/assets/images/Screenshot%20sign%20up.png)
 
-### In your profile page you can post what you are listening to. First, type the song name in the top box. After that choose the version of your song. Then leave your comments (optional) other users will see and finally press submit.
+### In your profile page you can post what you are listening to. First, type the song name in the top box. After that choose the version of your song. Then leave your comments (optional) other users will see and finally press submit
 
 ![login](./public/assets/images/profile-page.png)
 
-### Your song will be posted on your profile and the home page.
+### Your song will be posted on your profile and the home page
 
 ## Credits
 
