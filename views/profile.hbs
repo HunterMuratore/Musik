@@ -1,40 +1,72 @@
-<div class="bg-white p-4 rounded shadow-md w-76 text-center mx-auto mt-4">
-  <img src="/assets/images/Musik(5).png" alt="User Avatar" class="w-16 h-16 mx-auto rounded-full mb-2">
-  <h1 class="text-xl font-semibold">{{username}}</h1>
-  <p class="text-gray-500">{{email}}</p>
+<div class="bg-white p-4 rounded w-46 text-center mx-auto">
+  <section class="hero bg-white">
+    <video class="w-full h-80" autoplay loop muted playsinline>
+      <source src="/assets/video/musik.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
 </div>
 
 <form id="postForm" action="/profile" method="POST">
   <h1>What are you listening to?</h1>
 
   {{#each errors}}
-  <p class="error text-center">{{this}}</p>
+    <p class="error text-center">{{this}}</p>
   {{/each}}
 
-  <input class="profile_input" type="text" id="trackField" placeholder="What song are you listening to?" required />
-  <label class="track_selector" for="">Choose the correct track:</label>
-  <select name="track" class="results"></select>
-  <input type="text" id="commentField" name="comment" placeholder="Tell us what you think of it!" />
-  <p>Character count: <span id="charCount">0</span>/100</p>
-  <button id="submitBtn"
-    class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1">Submit</button>
+  <input
+    class="profile_input"
+    type="text"
+    id="trackField"
+    placeholder="What song are you listening to?"
+    required
+  />
+  <br />
+  <label class="track_selector" for="">Choose the correct version:</label>
+  <select name="track" class="profile_input results"></select>
+  <br />
+  <p class="text-center"> Leave your comment below!</p>
+  <input
+    class="profile_input"
+    type="text"
+    id="commentField"
+    name="comment"
+    placeholder="Tell us what you think of it!"
+  />
+  <p class="text-center">Character count: <span id="charCount">0</span>/100</p>
+  <button
+    id="submitBtn"
+    class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center m-1"
+  >Submit</button>
 </form>
 
-<section class="post-section text-center mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<br />
+
+<br />
+
+<section
+  class="post-section text-center mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+>
   {{#each posts as |post|}}
-  <div class="song-card bg-white p-4 rounded-lg shadow-md">
-    <p class ="text-sm">{{author.username}} is listening to</p>
-    <img src="{{post.album_cover}}" alt="{{post.album_name}} Cover" class="w-40 h-40 mx-auto my-1"/>
-    <h2 >
-      <span class="font-semibold">{{post.track}}</span> - {{post.artist}}</h2>
-    <p>{{post.album_name}}</p>
-    <p><button class="audio-control-btn" data-audio="{{post.audio_url}}">
-      <i class="fa-solid fa-play" style="color: #71d26a;"></i>
-    </button><span class="ms-2">Play</span></p>
-    {{#if post.comment}}
-    <p class="comment">{{post.comment}}</p>
-    {{else}}
-    {{/if}}
-  </div>
+    <div class="song-card bg-white p-4 mx-20 rounded-lg shadow-md">
+      <p class="text-sm">{{author.username}} is listening to</p>
+      <img
+        src="{{post.album_cover}}"
+        alt="{{post.album_name}} Cover"
+        class="w-40 h-40 mx-auto my-1"
+      />
+      <h2>
+        <span class="font-semibold">{{post.track}}</span>
+        -
+        {{post.artist}}</h2>
+      <p>{{post.album_name}}</p>
+      <p><button class="audio-control-btn" data-audio="{{post.audio_url}}">
+          <i class="fa-solid fa-play" style="color: #71d26a;"></i>
+        </button><span class="ms-2">Play</span></p>
+      {{#if post.comment}}
+        <p class="comment">{{post.comment}}</p>
+      {{else}}
+      {{/if}}
+    </div>
   {{/each}}
 </section>
