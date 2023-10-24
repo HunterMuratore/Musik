@@ -20,12 +20,15 @@ N/A
 ## Usage
 
 When you first enter the home page press on the register button to sign up.
+
 ![main-page](./public/assets/images/main-page.png)
 
 In the sign up page enter your email, usernamen and password and press sign up.
+
 ![main-page](./public/assets/images/Screenshot%20sign%20up.png)
 
 Once you sign up, press the login button on the nav and fill in your Email, username, and password then press login.
+
 ![main-page](./public/assets/images/login.png)
 
 ## Credits
@@ -50,8 +53,6 @@ Please refer to the LICENSE in the repo.
 ![express](https://img.shields.io/badge/Express-V4.18.2-red)
 ![express](https://img.shields.io/badge/Dotenv-V16.3.1-palegoldenrod)
 ![express](https://img.shields.io/badge/Bcrypt-V5.1.1-darkseagreen)
-![javascript](https://img.shields.io/badge/JavaScript-54.20%-yellow)
-![css](https://img.shields.io/badge/CSS-2.60%-white)
 
 ## Features
 
