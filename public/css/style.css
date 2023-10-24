@@ -157,6 +157,10 @@ a {
   margin: 0 20px;
 }
 
+.user-posts {
+  font-size: 24px;
+}
+
 .song-card {
   margin-bottom: 15px;
   border: 1px solid lightgray;

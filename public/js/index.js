@@ -25,7 +25,7 @@ trackField.on('input', function () {
 
             results.forEach(result => {
                 resultOutput.append(`
-                <option value="${result.id}">Album: <img src="${result.album.images[0].url}"> ${result.album.name}</option>
+                <option value="${result.id}">Album: <img src="${result.album.images[0].url}"> ${result.album.name} by ${result.artists[0].name}</option>
                 `)
             });
         }, 1 * 1000);

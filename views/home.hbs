@@ -5,11 +5,9 @@
   </video>
 </section>
 
-<section
-  class="post-section mt-4 text-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
->
+<section class="post-section mt-4 text-center grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
   {{#each posts as |post|}}
-    <div class="song-card bg-white p-4 rounded-lg mx-20 shadow-md">
+    <div class="song-card bg-white p-4 rounded-lg shadow-md">
       <p class="text-sm">{{author.username}} is listening to</p>
       <img
         src="{{post.album_cover}}"
