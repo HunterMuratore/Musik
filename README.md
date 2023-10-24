@@ -8,14 +8,11 @@ Musik brings users to meet and post about music others are listening to. We lear
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Description](#description)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-
-## Installation
-
-N/A
+- [Contribute]{#contribute}
 
 ## Usage
 
@@ -23,7 +20,8 @@ N/A
 
 ![main-page](./public/assets/images/main-page.png)
 
-### In the sign up page enter your email, username and password and press sign up.
+In the sign up page enter your email, username and password and press sign up.
+![main-page](./public/assets/images/Screenshot%20sign%20up.png)
 
 ![signup](./public/assets/images/Screenshot%20sign%20up.png)
 
@@ -35,13 +33,14 @@ N/A
 
 ## Credits
 
-- Hunter Muratore (https://github.com/HunterMuratore) 
-- Brandon Myers (https://github.com/brandonom) 
-- Alex Pohlman (https://github.com/apohl53)  
-- Kevin Castro (https://github.com/Kev-Castro) 
-- David Duran (https://github.com/ddurandev) 
+- Hunter Muratore (<https://github.com/HunterMuratore>)
+- Brandon Myers (<https://github.com/brandonom>)
+- Alex Pohlman (<https://github.com/apohl53>)
+- Kevin Castro (<https://github.com/Kev-Castro>)
+- David Duran (<https://github.com/ddurandev>)
 
 ## License
+
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 Please refer to the LICENSE in the repo.
@@ -56,11 +55,9 @@ Please refer to the LICENSE in the repo.
 ![express](https://img.shields.io/badge/Dotenv-V16.3.1-palegoldenrod)
 ![express](https://img.shields.io/badge/Bcrypt-V5.1.1-darkseagreen)
 
-## Features
+## Contribute
 
+Musik is an open source project that welcomes any passionate developers and music fans to contribute their ideas and time to enhance the app.
 
-
-## How to Contribute
-
-N/A
-
+Feel free to fork this repo and work on your own, or send us a message here to ask any questions about the app or how to contribute!
+>Email: [muratoreh@gmail.com](mailto:muratoreh@gmail.com)
